@@ -1,0 +1,59 @@
+<div class="row mt-3">
+  <div class="col-6 offset-3">
+    <form>
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input
+          [disabled]="!editBtn"
+          type="text"
+          class="form-control"
+          name="name"
+          id="name"
+          placeholder="Name"
+          [(ngModel)]="user[0].firstName"
+        />
+      </div>
+      <br/>
+      <div class="form-group">
+        <label for="place">Last Name</label>
+        <input
+          [disabled]="!editBtn"
+          type="text"
+          class="form-control"
+          name="place"
+          id="place"
+          placeholder=""
+          [(ngModel)]="user[0].lastName"
+        />
+      </div>
+      <br/>
+      <div class="form-group">
+        <label for="address">Email Address</label>
+        <input
+          [disabled]="!editBtn"
+          type="text"
+          class="form-control"
+          name="address"
+          id="address"
+          placeholder=""
+          [(ngModel)]="user[0].email"
+        />
+      </div>
+      <br/>
+      <button class="btn btn-secondary" *ngIf="!editBtn" (click)="onOff()">
+        Edit
+      </button>
+
+      <button
+        *ngIf="editBtn"
+        class="btn btn-primary mx-2"
+        (click)="onSubmit(user[0]._id)"
+      >
+        Ok
+      </button>
+      <button *ngIf="editBtn" class="btn btn-danger" (click)="onOff()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>

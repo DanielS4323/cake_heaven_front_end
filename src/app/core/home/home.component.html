@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+  <div class="col-10">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="bakeryImage" alt="Random first slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ slides[0].text }}</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="cakesImage" alt="Random second slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ slides[1].text }}</h3>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="world" alt="Random first third" />
+        </div>
+        <div class="carousel-caption">
+          <h3>{{ slides[2].text }}</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

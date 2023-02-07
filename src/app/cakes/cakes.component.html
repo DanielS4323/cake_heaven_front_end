@@ -1,0 +1,15 @@
+<div class="row mt-3">
+    <div class="col-4">
+        <select name="" id="" [(ngModel)]="params.filter.ingredients" (change)="getCakes()">
+            <option value="">All</option>
+            <option *ngFor="let ing of ingredients" value="{{ing}}">{{ing}}</option>
+        </select>
+    </div>
+</div>
+<div class="row mt-3"> 
+    <div class="col-4" style="cursor: pointer;" *ngFor="let item of cakes" [routerLink]="['/details', item._id]">
+        <img class="img-fluid" src="{{images}}/{{item._id}}.jpg" alt="">
+        <h3>{{item.name}}</h3>
+        <p>{{item.ingredients}}</p>
+    </div>
+</div>
